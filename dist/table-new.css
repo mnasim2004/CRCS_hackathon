@@ -1,0 +1,7 @@
+.filter-item{
+    margin: 20px 0px 20px 0px;
+}
+
+.tabulator-header-filter input::placeholder {
+    color: black;
+}
