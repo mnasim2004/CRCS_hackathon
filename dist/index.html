@@ -130,59 +130,21 @@
 		<div class="app-body-main-content">
 			<section class="service-section" id="section-table" style="display: block;">
 				<h2>Tables</h2>
-				<!--div class="service-section-header">
-					<div class="search-field" id="search-field-nos">
+				<div class="search-field">
+					<div class="search-element">
 						<i class="ph-magnifying-glass"></i>
-						<input type="text" placeholder="Name of Society">
+						<input class="search" id="name" type="text" placeholder="Name of Society">
 					</div>
-					<div class="search-field" id="search-field-adr">
+					<div class="search-element">
 						<i class="ph-magnifying-glass"></i>
-						<input type="text" placeholder="Address">
+					<input class="search" id="address" type="text" placeholder="Address">
 					</div>
-					<div class="search-field" id="search-field-date">
+					<div class="search-element">
 						<i class="ph-magnifying-glass"></i>
-						<input type="date" placeholder="Date of Registration">
+						<input class="search" id="area" type="text" placeholder="Area of Operation">
 					</div>
-					<div class="search-field" id="search-field-aoo">
-						<i class="ph-magnifying-glass"></i>
-						<input type="text" placeholder="Area of Operation">
-					</div>
-					<div class="dropdown-field">
-						<select>
-							<option>Home</option>
-							<option>Work</option>
-						</select>
-						<i class="ph-caret-down"></i>
-					</div>
-					<button class="flat-button">
-						Search
-					</button>
-				</div-->
-				<div>
-					<!--select id="filter-field">
-					<option></option>
-					  <option value="Name of Society">Name of Society</option>
-					  <option value="Address">Address</option>
-					  <option value="Date Of Registration">Date Of Registration</option>
-					  <option value="Area of Operation">Area of Operation</option>
-					</select>
-				  
-					<select id="filter-type">
-					  <option value="=">=</option>
-					  <option value="<"><</option>
-					  <option value="<="><=</option>
-					  <option value=">">></option>
-					  <option value=">=">>=</option>
-					  <option value="!=">!=</option>
-					  <option value="like">like</option>
-					</select-->
-				  
-					<input id="name" type="text" placeholder="Name of Society">
-					<input id="address" type="text" placeholder="Address">
-					<input id="area" type="text" placeholder="Area of Operation">
-				  
-					<button id="filter-clear">Clear Filter</button>
-				  </div>
+					<button class="flat-button" id="filter-clear">Clear Filter</button>
+				</div>
 				  
 				<div class="mobile-only">
 					<button class="flat-button">
@@ -191,7 +153,7 @@
 				</div>
 				  
 				<div id="example-table"></div>
-
+			</section>
 				
 				<!--div class="tiles">
 					<article class="tile">
@@ -243,7 +205,7 @@
 				<div class="service-section-footer">
 					<p>Services are paid according to the current state of the currency and tariff.</p>
 				</div-->
-			</section>
+			
 			<section class="service-section" id ="section-chart" style="display: none;">
 				<h2>Charts</h2>
 			</section>

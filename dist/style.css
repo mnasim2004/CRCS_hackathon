@@ -449,26 +449,7 @@ a {
   margin-top: 1rem;
 }
 
-.search-field {
-  display: flex;
-  flex-grow: 1;
-  position: relative;
-}
-.search-field input {
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border: 0;
-  border-bottom: 1px solid var(--c-gray-600);
-  background-color: transparent;
-  padding-left: 1.5rem;
-}
-.search-field i {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+
 
 .dropdown-field {
   display: flex;
@@ -856,3 +837,18 @@ g[aria-labelledby="id-79-title"] {
 #example-table{
   margin-top: 20px;
 }
+
+
+/*
+.sbutton {
+  position: relative;
+  top:50%;
+  background-color:#0a0a23;
+  color: #fff;
+  border:none; 
+  border-radius:10px; 
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+}
+*/

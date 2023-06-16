@@ -14,50 +14,7 @@ $(document).ready(function() {
                 datajson[i]["Sr. No."] = parseInt(datajson[i]["Sr. No."])
             }
             */
-           
-            /*
-            var valueE1 = document.getElementById("filter-value1");
-            var valueE2 = document.getElementById("filter-value2");
-            var valueE3 = document.getElementById("filter-value3");
-            var valueE4 = document.getElementById("filter-value4");
-                    
-            //Custom filter example
-            function customFilter(data){
-                return data.car && data.rating < 3;
-            }
-            //Trigger setFilter function with correct parameters
-            function updateFilter(){
-              var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
-              var typeVal = typeEl.options[typeEl.selectedIndex].value;
-            
-              var filter = filterVal == "function" ? customFilter : filterVal;
-            
-              if(filterVal == "function" ){
-                typeEl.disabled = true;
-                valueEl.disabled = true;
-              }else{
-                typeEl.disabled = false;
-                valueEl.disabled = false;
-              }
-              
-              if(filterVal){
-                table.setFilter(filter,typeVal, valueEl.value);
-              }
-            }
-            
-            //Update filters on value change
-            document.getElementById("filter-field").addEventListener("change", updateFilter);
-            document.getElementById("filter-type").addEventListener("change", updateFilter);
-            document.getElementById("filter-value").addEventListener("keyup", updateFilter);
-            
-            //Clear filters on "Clear Filters" button click
-            document.getElementById("filter-clear").addEventListener("click", function(){
-              fieldEl.value = "";
-              typeEl.value = "=";
-              valueEl.value = "";
-              table.clearFilter();
-            });
-            */
+ 
 
             var name = document.getElementById("name");
             name.addEventListener("change", function(e){
@@ -70,6 +27,21 @@ $(document).ready(function() {
               console.log(this)
                 table.setFilter("Address","keywords", this.value);
             })
+
+            var area = document.getElementById("area");
+            area.addEventListener("change", function(e){
+              console.log(this)
+                table.setFilter("Area of Operation","keywords", this.value);
+        
+            })
+            document.getElementById("filter-clear").addEventListener("click", function(){
+                name.value = "";
+                address.value = "";
+                area.value = "";
+              
+                table.clearFilter();
+              });
+            
 
             function yearfilter(headerValue, rowValue, rowData, filterParams){
               if(headerValue==null){return true}
@@ -90,23 +62,26 @@ $(document).ready(function() {
 
             var table = new Tabulator("#example-table", {
                 data:datajson,
+                resizableColumnFit:true,
                 pagination:true,
                 paginationSize:10,
                 paginationSizeSelector:[5, 10, 20],
                 paginationCounter:"rows",
                 columns:[
-                    {title:"Sr_No", field:"Sr_No",hozAlign:"center", width:80},
-                    {title:"Name of Society",formatter:"textarea", hozAlign:"center", field:"Name of Society",headerFilterLiveFilter:true},
-                    {title:"Address",formatter:"textarea",hozAlign:"center", field:"Address"},
-                    {title:"State", field:"State",hozAlign:"center",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
-                    {title:"District",hozAlign:"center", field:"District",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
-                    {title:"Date of Registration",hozAlign:"center", field:"Date of Registration",headerFilter:"list",headerFilterParams:{values:yearlist, clearable:true}, headerFilterFunc:yearfilter},
-                    {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation"},
-                    {title:"Sector Type",hozAlign:"center", field:"Sector Type",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
+                    {title:"Sr_No", field:"Sr_No",hozAlign:"center", width:80, resizable:false},
+                    {title:"Name of Society",formatter:"textarea", hozAlign:"center", field:"Name of Society",headerFilterLiveFilter:true, resizable:false},
+                    {title:"Address",formatter:"textarea",hozAlign:"center", field:"Address", resizable:false},
+                    {title:"State", field:"State",hozAlign:"center",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
+                    {title:"District",hozAlign:"center", field:"District",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
+                    {title:"Date of Registration",hozAlign:"center", field:"Date of Registration",headerFilter:"list",headerFilterParams:{values:yearlist, clearable:true}, headerFilterFunc:yearfilter, resizable:false},
+                    {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation", resizable:false},
+                    {title:"Sector Type",hozAlign:"center", field:"Sector Type",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
                 ],
                 layout: 'fitColumns'
             });
 
+
+            /*
             table.on("dataFiltered", function(filters, rows){
               console.log(filters)
               if (!filters.length){return}
@@ -127,7 +102,7 @@ $(document).ready(function() {
               }
               table.updateColumnDefinition("District", {headerFilterParams:{valuesLookup:true, clearable:true}}) 
             });
-            
+            */
             
         },
         error: function (request, status, error) {

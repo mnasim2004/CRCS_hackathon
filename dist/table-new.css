@@ -5,3 +5,37 @@
 .tabulator-header-filter input::placeholder {
     color: black;
 }
+#example-table{
+    margin-top: 20px;
+  }
+  .service-section {
+    max-width: 99%;
+  }
+
+/*seacrh field*/
+.search-field {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    justify-content: space-around;
+  }
+  .search-field input {
+    width: 200%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 0;
+    border-bottom: 1px solid var(--c-gray-600);
+    background-color: transparent;
+    padding-left: 1.5rem;
+  }
+  .search-field i {
+    position: relative;
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+  
+  }
+  .search-element{
+    width:10%;
+    position: relative;
+  }
