@@ -12,6 +12,22 @@
     max-width: 99%;
   }
 
+  .flat-button {
+    border-radius: 6px;
+    background-color: var(--c-gray-700);
+    padding: 0.5em 1.5em;
+    border: 0;
+    color: var(--c-text-secondary);
+    transition: 0.25s ease;
+    cursor: pointer;
+    height: fit-content;
+    align-self: self-end;
+  }
+    
+  .flat-button:hover, .flat-button:focus {
+    background-color: var(--c-gray-600);
+  }
+
 /*seacrh field*/
 .search-field {
     display: flex;

@@ -1,200 +1,12 @@
 
 
 
-/*------------------- India Chart ------------------*/
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
-
- // Create map instance
-var chart = am4core.create("chartdiv", am4maps.MapChart);
-
-// Set map definition
-chart.geodata = am4geodata_india2019High;
-
-
-
-// Create map polygon series
-var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-
-//Set min/max fill color for each area
-polygonSeries.heatRules.push({
-  property: "fill",
-  target: polygonSeries.mapPolygons.template,
-  min: chart.colors.getIndex(1).brighten(1),
-  max: chart.colors.getIndex(1).brighten(-0.3)
-});
-
-// Make map load polygon data (state shapes and names) from GeoJSON
-polygonSeries.useGeodata = true;
-
-// Set heatmap values for each state
-polygonSeries.data = [
-  {
-    id: "IN-JK",
-    value: 20
-  },
-  {
-    id: "IN-MH",
-    value: 100
-  },
-  {
-    id: "IN-UP",
-    value: 0
-  },
-  {
-    id: "US-AR",
-    value: 0
-  },
-  {
-    id: "IN-RJ",
-    value: 0
-  },
-  {
-    id: "IN-AP",
-    value: 0
-  },
-  {
-    id: "IN-MP",
-    value: 0
-  },
-  {
-    id: "IN-TN",
-    value: 0
-  },
-  {
-    id: "IN-JH",
-    value: 0
-  },
-  {
-    id: "IN-WB",
-    value: 0
-  },
-  {
-    id: "IN-GJ",
-    value: 0
-  },
-  {
-    id: "IN-BR",
-    value: 0
-  },
-  {
-    id: "IN-TG",
-    value: 0
-  },
-  {
-    id: "IN-GA",
-    value: 0
-  },
-  {
-    id: "IN-DN",
-    value: 0
-  },
-  {
-    id: "IN-DL",
-    value: 0
-  },
-  {
-    id: "IN-DD",
-    value: 0
-  },
-  {
-    id: "IN-CH",
-    value: 0
-  },
-  {
-    id: "IN-CT",
-    value: 0
-  },
-  {
-    id: "IN-AS",
-    value: 0
-  },
-  {
-    id: "IN-AR",
-    value: 0
-  },
-  {
-    id: "IN-AN",
-    value: 0
-  },
-  {
-    id: "IN-KA",
-    value: 0
-  },
-  {
-    id: "IN-KL",
-    value: 0
-  },
-  {
-    id: "IN-OR",
-    value: 0
-  },
-  {
-    id: "IN-SK",
-    value: 0
-  },
-  {
-    id: "IN-HP",
-    value: 0
-  },
-  {
-    id: "IN-PB",
-    value: 0
-  },
-  {
-    id: "IN-HR",
-    value: 0
-  },
-  {
-    id: "IN-UT",
-    value: 0
-  },
-  {
-    id: "IN-LK",
-    value: 0
-  },
-  {
-    id: "IN-MN",
-    value: 0
-  },
-  {
-    id: "IN-TR",
-    value: 0
-  },
-  {
-    id: "IN-MZ",
-    value: 0
-  },
-  {
-    id: "IN-NL",
-    value: 0
-  },
-  {
-    id: "IN-ML",
-    value: 0
-  }
-];
-
-
-
-// Configure series tooltip
-var polygonTemplate = polygonSeries.mapPolygons.template;
-polygonTemplate.tooltipText = "{name}: {value}";
-polygonTemplate.nonScalingStroke = true;
-polygonTemplate.strokeWidth = 0.5;
-
-// Create hover state and set alternative fill color
-var hs = polygonTemplate.states.create("hover");
-hs.properties.fill = am4core.color("#3c5bdc");
-
-
-
-
 /*----------End of India Chart---------------*/
 
-var f = document.getElementsByClassName("innerclick")
 
+
+
+var f = document.getElementsByClassName("innerclick")
 for (let i=0;i<f.length;i++){
     f[i].addEventListener("click", function(){
 
@@ -206,22 +18,107 @@ for (let i=0;i<f.length;i++){
         document.getElementById("section-"+f[i].id).style.display = "block"
         f[i].classList.add("current")
         console.log(f[i].classList)
-
     })
 }
 
 
-function display_section(section_name){
+function getModified(datajson){
+  var Statewise = []
+  for (i in datajson){
+      if(Statewise[datajson[i]["State"]] == null){
+          Statewise[datajson[i]["State"]] = {}
+      }
+      if (Statewise[datajson[i]["State"]]["count"] == null){
+          Statewise[datajson[i]["State"]]["count"] = 1
+          Statewise[datajson[i]["State"]]["distribution"] = {}
+      }
+      else {
+          Statewise[datajson[i]["State"]]["count"] += 1 
+      }
 
-    for (let i=0;i< f.length;i++){
-        if(f[i].id==section_name){
-            alert("section-"+f[i].id)
-            document.getElementById("section-"+f[i].id).style.display = "block"
+
+      if(Statewise[datajson[i]["State"]]["distribution"][datajson[i]["Sector Type"]] == null){
+          Statewise[datajson[i]["State"]]["distribution"][datajson[i]["Sector Type"]] = 1
+      }
+      else{
+          Statewise[datajson[i]["State"]]["distribution"][datajson[i]["Sector Type"]] +=1
+      }
+  }
+  return Statewise
+  
+}
+function getSectorwise(datajson){
+    var Sectorwise = [];
+    for(i in datajson){
+        if(Sectorwise[datajson[i]["Sector Type"]] == null){
+            Sectorwise[datajson[i]["Sector Type"]] = {}
+        } 
+        if (Sectorwise[datajson[i]["Sector Type"]]["count"] == null){
+            Sectorwise[datajson[i]["Sector Type"]]["count"] = 1
+            Sectorwise[datajson[i]["Sector Type"]]["distribution"] = {}
         }
         else{
-            alert("section-"+f[i].id)
-            document.getElementById("section-"+f[i]).style.display = "none"
+            Sectorwise[datajson[i]["Sector Type"]]["count"] += 1
+        }
+        if(Sectorwise[datajson[i]["Sector Type"]]["distribution"][datajson[i]["State"]] == null){
+            Sectorwise[datajson[i]["Sector Type"]]["distribution"][datajson[i]["State"]] = 1
+        }
+        else{
+            Sectorwise[datajson[i]["Sector Type"]]["distribution"][datajson[i]["State"]] +=1
+        }
+
+
+    }
+    return Sectorwise;
+}
+
+
+function getYearWise(datajson){
+    for(i in datajson){
+        //console.log(datajson[i]["Date of Registration"]);
+        if(datajson[i]["Date of Registration"]==undefined){
+            console.log(datajson[i])
         }
     }
+    temp = {}
+    for (var i = 0; i < datajson.length; i++) {
+        if(datajson[i]["Date of Registration"]==null || datajson[i]["Date of Registration"]=="" ){
+            if (!temp[""]){
+                temp[""] = 1
+            }
+            else{
+                temp[""] += 1 
+            }
+        }
+
+        else if( temp[datajson[i]["Date of Registration"].split("/")[2]]==null){
+            temp[datajson[i]["Date of Registration"].split("/")[2]] = 1
+        }
+        else{
+            temp[datajson[i]["Date of Registration"].split("/")[2]] += 1;
+        }
+    }
+    return temp
 }
+
+$(document).ready(function() {
+  //console.log("asdasdad")
+  $.ajax({
+      type: "GET",
+      url: "data.csv",
+      dataType: "text",
+      success: function(data) {
+          //console.log(data)
+          var datajson = $.csv.toObjects(data)
+          createTable(datajson)
+          createMap(datajson)
+          createChart(datajson)
+          console.log(datajson)
+          getYearWise(datajson)
+      },
+      error: function (request, status, error) {
+          //console.log(error)
+      }
+   });
+});
 

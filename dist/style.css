@@ -477,18 +477,7 @@ a {
   transform: translateY(-50%);
 }
 
-.flat-button {
-  border-radius: 6px;
-  background-color: var(--c-gray-700);
-  padding: 0.5em 1.5em;
-  border: 0;
-  color: var(--c-text-secondary);
-  transition: 0.25s ease;
-  cursor: pointer;
-}
-.flat-button:hover, .flat-button:focus {
-  background-color: var(--c-gray-600);
-}
+
 
 .mobile-only {
   display: none;
@@ -819,7 +808,7 @@ body {
 
 #chartdiv {
   width: 100%;
-  height: 500px
+  height: 800px;
 }
 
 g[aria-labelledby="id-79-title"] {
@@ -834,9 +823,6 @@ g[aria-labelledby="id-79-title"] {
   cursor: pointer;
 } 
 
-#example-table{
-  margin-top: 20px;
-}
 
 
 /*

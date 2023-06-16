@@ -1,20 +1,5 @@
-$(document).ready(function() {
-    //console.log("asdasdad")
-    $.ajax({
-        type: "GET",
-        url: "data.csv",
-        dataType: "text",
-        success: function(data) {
-            //console.log(data)
-            var datajson = $.csv.toObjects(data)
-            console.log(datajson)
-            
-            /*
-            for (i in datajson){
-                datajson[i]["Sr. No."] = parseInt(datajson[i]["Sr. No."])
-            }
-            */
- 
+function createTable(datajson){
+  //console.log(datajson)
 
             var name = document.getElementById("name");
             name.addEventListener("change", function(e){
@@ -57,7 +42,7 @@ $(document).ready(function() {
               temp[datajson[i]["Date of Registration"].split("/")[2]] = 0;
             }
             yearlist = Object.keys(temp)
-            console.log(yearlist)
+            //console.log(yearlist)
           
 
             var table = new Tabulator("#example-table", {
@@ -71,7 +56,7 @@ $(document).ready(function() {
                     {title:"Sr_No", field:"Sr_No",hozAlign:"center", width:80, resizable:false},
                     {title:"Name of Society",formatter:"textarea", hozAlign:"center", field:"Name of Society",headerFilterLiveFilter:true, resizable:false},
                     {title:"Address",formatter:"textarea",hozAlign:"center", field:"Address", resizable:false},
-                    {title:"State", field:"State",hozAlign:"center",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
+                    {title:"State", field:"State",formatter:"textarea",hozAlign:"center",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
                     {title:"District",hozAlign:"center", field:"District",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
                     {title:"Date of Registration",hozAlign:"center", field:"Date of Registration",headerFilter:"list",headerFilterParams:{values:yearlist, clearable:true}, headerFilterFunc:yearfilter, resizable:false},
                     {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation", resizable:false},
@@ -79,34 +64,8 @@ $(document).ready(function() {
                 ],
                 layout: 'fitColumns'
             });
+}
 
 
-            /*
-            table.on("dataFiltered", function(filters, rows){
-              console.log(filters)
-              if (!filters.length){return}
-              for (i in filters){
-                if (filters[i].field=="State"){
-                  temp = {}
-                  // Store each of the elements in an object keyed of of the name field.  If there is a collision (the name already exists) then it is just replaced with the most recent one.
-                  for (var j = 0; j < datajson.length; j++) {
-                    if(datajson[j]["State"]==filters[i].value && datajson[j]["District"]!="")
-                      temp[datajson[j]["District"]] = datajson[j];
-                  }
-                  uniq_dist = Object.keys(temp)
-                  //table.options.columns[4].headerFilterParams = {values:uniq_dist}
-                  table.updateColumnDefinition("District", {headerFilterParams:{values:uniq_dist, clearable:true}}) 
-                  return;
-                }
-                  
-              }
-              table.updateColumnDefinition("District", {headerFilterParams:{valuesLookup:true, clearable:true}}) 
-            });
-            */
-            
-        },
-        error: function (request, status, error) {
-            //console.log(error)
-        }
-     });
-});
+
+
