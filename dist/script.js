@@ -255,6 +255,7 @@ $(document).ready(function() {
           createMapStatewise(datajson)
           createMapAreas(datajson)
           createCharts(datajson)
+          createChartsAll(datajson)
           //getYearState(datajson, "Kerala")
           //console.log(datajson)
           //getDataState(datajson, "Kerala")

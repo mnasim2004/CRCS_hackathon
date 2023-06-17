@@ -1,0 +1,57 @@
+header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#297472;
+    color: #fff;
+    z-index: 1000;
+    height: 175px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  } 
+main {
+    margin-top: 160px; 
+  }
+
+._3lion{
+    margin : 10px 20px 10px 40px;
+}
+
+.mscs_logo{
+    margin : 10px 20px 10px 40px;
+}
+
+.tabs a {
+    padding-top:5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    border-top: 2px solid transparent;
+    display: inline-flex;
+    transition: 0.25s ease;
+    color:white;
+    border-radius: 100px;
+    padding : 4px 8px 2px 8px;
+  }
+.tabs a:nth-child(1){
+    margin-left: 50px;
+}
+.tabs a:nth-child(9){
+    margin-right: 50px;
+}
+footer{
+    position: relative;
+}
+
+.tabs a.active, .tabs a:hover, .tabs a:focus {
+    transform: translateY(4px);
+  color: #2B7A78;
+  border-radius: 25px;
+  background: white;
+  border: none !important;
+  text-align: centre;
+  padding : 4px 8px 2px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
