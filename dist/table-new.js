@@ -1,6 +1,6 @@
 function createTable(datajson){
   //console.log(datajson)
-
+  
             var name = document.getElementById("name");
             name.addEventListener("change", function(e){
               console.log(this)
@@ -47,6 +47,7 @@ function createTable(datajson){
 
             var table = new Tabulator("#example-table", {
                 data:datajson,
+                layout: 'fitColumns',
                 resizableColumnFit:true,
                 pagination:true,
                 paginationSize:10,
@@ -62,7 +63,7 @@ function createTable(datajson){
                     {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation", resizable:false},
                     {title:"Sector Type",hozAlign:"center", field:"Sector Type",headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}, resizable:false},
                 ],
-                layout: 'fitColumns'
+                
             });
 }
 

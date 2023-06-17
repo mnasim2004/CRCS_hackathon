@@ -24,15 +24,19 @@ main {
 }
 
 .tabs a {
+    justify-content: space-around;
     padding-top:5px;
     padding-bottom: 5px;
+    width: 100px;
+    text-align: center ;
+    margin:auto;
     text-decoration: none;
     border-top: 2px solid transparent;
     display: inline-flex;
     transition: 0.25s ease;
     color:white;
     border-radius: 100px;
-    padding : 4px 8px 2px 8px;
+    padding : 4px 3px 3px 8px;
   }
 .tabs a:nth-child(1){
     margin-left: 50px;
@@ -46,12 +50,12 @@ footer{
 
 .tabs a.active, .tabs a:hover, .tabs a:focus {
     transform: translateY(4px);
-  color: #2B7A78;
+  color: #17252A;
   border-radius: 25px;
   background: white;
   border: none !important;
   text-align: centre;
-  padding : 4px 8px 2px 8px;
+  padding : 2px 8px 2px 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 
