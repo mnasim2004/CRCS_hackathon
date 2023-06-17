@@ -59,6 +59,7 @@ for (let i=0;i<f.length;i++){
         //console.log(f[i].classList)
     })
 }
+document.getElementById("table").click()
 
 
 function getModified(datajson){

@@ -90,7 +90,7 @@ function createSubCharts(datajson, statename){
         data:newdata,
         resizableColumnFit:true,
         pagination:true,
-        paginationSize:10,
+        paginationSize:5,
         paginationSizeSelector:[5, 10, 20],
         paginationCounter:"rows",
         columns:[
