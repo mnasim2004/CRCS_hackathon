@@ -248,7 +248,6 @@ $(document).ready(function() {
       dataType: "text",
       success: function(data) {
           //console.log(data)
-          var state = "Kerala"  
           var datajson = $.csv.toObjects(data)
           //console.log(datajson)
           WHOLEDATA = datajson
