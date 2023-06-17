@@ -17,13 +17,12 @@ function createSubCharts(datajson, statename){
     const ctx1 = document.getElementById('mysubChart1');
   
       new Chart(ctx1, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
           labels: xlabels,
           datasets: [{
             label: 'Number of Society',
-            data: ylabels,
-            borderWidth: 1
+            data: ylabels
           }]
         },
         options: {
@@ -37,11 +36,6 @@ function createSubCharts(datajson, statename){
   
               },
           },
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
   
         }
       });
@@ -53,13 +47,12 @@ function createSubCharts(datajson, statename){
     const ctx2 = document.getElementById('mysubChart2');
   
       new Chart(ctx2, {
-        type: 'line',
+        type: 'doughnut',
         data: {
           labels: xlabels,
           datasets: [{
             label: 'Number of Society',
-            data: ylabels,
-            borderWidth: 1
+            data: ylabels
           }]
         },
         options: {
@@ -72,11 +65,6 @@ function createSubCharts(datajson, statename){
                   }
               }
           },
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
   
         }
       });
