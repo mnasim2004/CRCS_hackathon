@@ -1,5 +1,5 @@
 /*Chart*/
-function createChart(datajson){
+function createCharts(datajson){
     var state = getModified(datajson);
     var label1= [];
     var datas1=[];
@@ -115,6 +115,14 @@ function createChart(datajson){
   
         }
       });
-
-
 }
+
+function createSubCharts
+
+
+
+
+
+
+
+
