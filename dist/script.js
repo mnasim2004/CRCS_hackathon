@@ -52,11 +52,11 @@ for (let i=0;i<f.length;i++){
         for (let i=0;i<f.length;i++){
             document.getElementById("section-"+f[i].id).style.display = "none"
             f[i].classList.remove("current")
-            console.log(f[i].classList)
+            //console.log(f[i].classList)
         }
         document.getElementById("section-"+f[i].id).style.display = "block"
         f[i].classList.add("current")
-        console.log(f[i].classList)
+        //console.log(f[i].classList)
     })
 }
 
@@ -180,7 +180,10 @@ function getYearWise(datajson){
 
 function getSectorState(datajson,state){
     var Sectorwise ={};
+    
     for (i in datajson){
+        //console.log(datajson[i]["State"])
+        //console.log(state)
         if (datajson[i]["State"].toLowerCase()!=state.toLowerCase()){continue}
 
         if(Sectorwise[datajson[i]["Sector Type"]] == null){
@@ -190,17 +193,17 @@ function getSectorState(datajson,state){
             Sectorwise[datajson[i]["Sector Type"]] += 1
         }
     }
-    console.log(Sectorwise);
+    //console.log(Sectorwise);
     return Sectorwise;
 }
-
-
-
 
 function getYearState(datajson,state){
     temp = {}
     for (var i = 0; i < datajson.length; i++) {
-        if((datajson[i]["Date of Registration"]==null || datajson[i]["Date of Registration"]=="" )&&(datajson[i]["State"] == state )){
+
+        if (datajson[i]["State"].toLowerCase()!=state.toLowerCase()){continue}
+
+        if(datajson[i]["Date of Registration"]==null || datajson[i]["Date of Registration"]=="" ){
             if (!temp[""]){
                 temp[""] = 1
             }
@@ -209,18 +212,32 @@ function getYearState(datajson,state){
             }
         }
 
-        else if(( temp[datajson[i]["Date of Registration"].split("/")[2]]==null)&&(datajson[i]["State"] == state )){
+        else if( temp[datajson[i]["Date of Registration"].split("/")[2]]==null){
             temp[datajson[i]["Date of Registration"].split("/")[2]] = 1
         }
-        else if (datajson[i]["State"] == state ){
+        else{
             temp[datajson[i]["Date of Registration"].split("/")[2]] += 1;
         }
     }
+    //console.log(temp)
     return temp
 }
 
+function getDataState(datajson, state){
+    var newdatajson = []
+    count = 0
+    for (i in datajson){
+        if (datajson[i]["State"].toLowerCase()!=state.toLowerCase()){continue}
+        newdatajson.push(datajson[i])
+        newdatajson[count]["Sr_No"] = count+1
+        count++
+    }
+    //console.log(newdatajson)
+    return newdatajson
+}
 
 
+var WHOLEDATA;
 
 $(document).ready(function() {
   //console.log("asdasdad")
@@ -232,19 +249,20 @@ $(document).ready(function() {
           //console.log(data)
           var state = "Kerala"  
           var datajson = $.csv.toObjects(data)
+          //console.log(datajson)
+          WHOLEDATA = datajson
           createTable(datajson)
           createMapStatewise(datajson)
           createMapAreas(datajson)
-          //console.log(getAreasofOperation(datajson))
-          //getSectorState(datajson,state)
-          //getYearState(datajson,state)
           createCharts(datajson)
-          console.log(datajson)
-          //getYearWise(datajson)
+          getYearState(datajson, "Kerala")
+          //console.log(datajson)
+          getDataState(datajson, "Kerala")
+          //console.log(datajson)
           
       },
       error: function (request, status, error) {
-          //console.log(error)
+          console.log(error)
       }
    });
 });

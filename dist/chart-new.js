@@ -117,7 +117,7 @@ function createCharts(datajson){
       });
 }
 
-function createSubCharts
+
 
 
 

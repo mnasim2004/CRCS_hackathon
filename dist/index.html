@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="./table-new.css">
 	<script src="jquery.js" type="text/javascript"></script>
 
-	
+	<link rel="stylesheet" href="./analytics.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet"/>
 	<script src="jquery-csv.js"></script>
@@ -217,12 +217,18 @@
 			</section>
 			<section class="service-section" id ="section-analytic" style="display: none;">
 				<h2>Analytics</h2>
-				<div>
-					<canvas id="mysubChart1"></canvas>
+				<h2 id="statename" style="text-align: center;justify-content: space-between;"></h2>
+				<div style="display: flex;">
+					<div style="width: 45%;">
+						<canvas id="mysubChart1"></canvas>
+					</div>
+					<div style="width: 45%;">
+						<canvas id="mysubChart2"></canvas>
+					</div>
 				</div>
-				<div>
-					<canvas id="mysubChart2"></canvas>
-				</div>
+				
+				<div id="subTable"></div>
+
 				<!--div class="service-section-header">
 					<div class="search-field">
 						<i class="ph-magnifying-glass"></i>
@@ -401,6 +407,7 @@
   <script  src="./indiamap.js"></script>
   <script  src="./script.js"></script>
   <script  src="./chart-new.js"></script>
+  <script  src="./analytics.js"></script>
   
 </body>
 </html>
