@@ -53,7 +53,7 @@ function createSubCharts(datajson, statename){
     const ctx2 = document.getElementById('mysubChart2');
   
       new Chart(ctx2, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: xlabels,
           datasets: [{

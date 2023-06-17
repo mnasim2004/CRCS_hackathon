@@ -349,6 +349,13 @@ function createMapAreas(datajson){
     // Configure series tooltip
     var polygonTemplate = polygonSeries.mapPolygons.template;
 
+    polygonTemplate.events.on("hit", function(ev) {
+        //console.log(ev.target.dataItem.dataContext.name);
+        createAnalytics(datajson, ev.target.dataItem.dataContext.name)
+        document.getElementById("analytic").click()
+        //document.getElementById("section-analytic").focus()
+    });
+
     polygonTemplate.tooltipText = "{name}: {value}";
     polygonTemplate.nonScalingStroke = true;
     polygonTemplate.strokeWidth = 0.5;

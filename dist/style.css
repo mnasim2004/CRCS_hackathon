@@ -811,7 +811,7 @@ body {
   height: 800px;
 }
 
-g[aria-labelledby="id-79-title"] {
+g[aria-labelledby="id-79-title"],g[aria-labelledby="id-163-title"] {
   visibility: hidden;
 }
 
@@ -823,6 +823,15 @@ g[aria-labelledby="id-79-title"] {
   cursor: pointer;
 } 
 
+
+.app-body-navigation{
+  height: auto;
+  border-right: groove 1px black;
+}
+
+.navigation{
+  height: -webkit-fill-available;
+}
 
 
 /*
