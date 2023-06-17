@@ -229,7 +229,7 @@ function getDataState(datajson, state){
     count = 0
     for (i in datajson){
         if (datajson[i]["State"].toLowerCase()!=state.toLowerCase()){continue}
-        newdatajson.push(datajson[i])
+        newdatajson.push(JSON.parse(JSON.stringify(datajson[i])))
         newdatajson[count]["Sr_No"] = count+1
         count++
     }
@@ -256,9 +256,9 @@ $(document).ready(function() {
           createMapStatewise(datajson)
           createMapAreas(datajson)
           createCharts(datajson)
-          getYearState(datajson, "Kerala")
+          //getYearState(datajson, "Kerala")
           //console.log(datajson)
-          getDataState(datajson, "Kerala")
+          //getDataState(datajson, "Kerala")
           //console.log(datajson)
           
       },
