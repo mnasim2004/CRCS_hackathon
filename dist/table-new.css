@@ -95,26 +95,35 @@
     border-radius: 20px;
 }
 
+#subTable{
+  background-color:#3AAFA9;
+  border-radius: 20px;
+}
 /*Theme the header*/
-#example-table .tabulator-header {
+.tabulator-header {
     background-color:#2B7A78;
-    color:#fff;
+    color:black;
 }
 
 
 /*Allow column header names to wrap lines*/
-#example-table .tabulator-header .tabulator-col,
-#example-table .tabulator-header .tabulator-col-row-handle {
+.tabulator-header .tabulator-col,
+.tabulator-header .tabulator-col-row-handle {
     white-space: normal;
 }
 
 /*Color the table rows*/
-#example-table .tabulator-tableHolder .tabulator-table .tabulator-row{
+.tabulator-tableHolder .tabulator-table .tabulator-row{
     color:#fff;
     background-color:#DEF2F1;
 }
 
 /*Color even rows*/
-#example-table .tabulator-tableHolder .tabulator-table .tabulator-row:nth-child(even) {
-    background-color: #3AAFA9;
+
+.tabulator-row.tabulator-row-even,.tabulator .tabulator-header .tabulator-col,.tabulator .tabulator-footer,
+.tabulator .tabulator-footer .tabulator-page-size  {
+  /*background-color: #EFDED2 !important;*/
+  background-color:#C3EAE8 !important;
 }
+
+

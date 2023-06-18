@@ -87,17 +87,18 @@ function createSubCharts(datajson, statename){
         paginationSizeSelector:[5, 10, 20],
         paginationCounter:"rows",
         columns:[
-            {title:"Sr_No", field:"Sr_No",hozAlign:"center", width:80, resizable:false},
-            {title:"Name of Society",formatter:"textarea", hozAlign:"center", field:"Name of Society",resizable:false},
-            {title:"Address",formatter:"textarea",hozAlign:"center", field:"Address", resizable:false},
-            {title:"State", field:"State",formatter:"textarea",hozAlign:"center",resizable:false},
-            {title:"District",hozAlign:"center", field:"District",resizable:false},
-            {title:"Date of Registration",hozAlign:"center", field:"Date of Registration",resizable:false},
-            {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation", resizable:false},
-            {title:"Sector Type",hozAlign:"center", field:"Sector Type",resizable:false},
+            {title:"Sr_No", field:"Sr_No",hozAlign:"center",headerHozAlign:"center", width:80, resizable:false},
+            {title:"Name of Society",formatter:"textarea", hozAlign:"center",headerHozAlign:"center", field:"Name of Society",resizable:false},
+            {title:"Address",formatter:"textarea",hozAlign:"center", field:"Address",headerHozAlign:"center", resizable:false},
+            {title:"State", field:"State",formatter:"textarea",hozAlign:"center",headerHozAlign:"center",resizable:false},
+            {title:"District",hozAlign:"center", field:"District",headerHozAlign:"center",resizable:false},
+            {title:"Date of Registration",hozAlign:"center", field:"Date of Registration",headerHozAlign:"center",resizable:false},
+            {title:"Area of Operation",hozAlign:"center",formatter:"textarea", field:"Area of Operation",headerHozAlign:"center", resizable:false},
+            {title:"Sector Type",hozAlign:"center", field:"Sector Type",headerHozAlign:"center",resizable:false},
         ],
         layout: 'fitColumns'
     });
+    document.getElementById("subTable").style.border = "1px solid #2B7A78"
   }
 
 function createAnalytics(datajson, state){
