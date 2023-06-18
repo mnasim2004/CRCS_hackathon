@@ -219,8 +219,10 @@ function createMapStatewise(datajson){
     polygonSeries.heatRules.push({
     property: "fill",
     target: polygonSeries.mapPolygons.template,
-    min: chart.colors.getIndex(1).brighten(1),
-    max: chart.colors.getIndex(1).brighten(-0.3)
+    // min: chart.colors.getIndex(1).brighten(1),
+    min: am4core.color('#E8CEBB'),
+    max: am4core.color('#d49977')
+    // max: chart.colors.getIndex(1).brighten(-0.3)
     });
 
     // Make map load polygon data (state shapes and names) from GeoJSON
@@ -249,7 +251,7 @@ function createMapStatewise(datajson){
 
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#3c5bdc");
+    hs.properties.fill = am4core.color("#d49977");
 
     chart.maxZoomLevel = 1;
     chart.seriesContainer.draggable = false;
@@ -334,8 +336,8 @@ function createMapAreas(datajson){
     polygonSeries.heatRules.push({
     property: "fill",
     target: polygonSeries.mapPolygons.template,
-    min: chart.colors.getIndex(1).brighten(1),
-    max: chart.colors.getIndex(1).brighten(-0.3)
+    min: am4core.color('#E8CEBB'),
+    max: am4core.color('#d49977')
     });
 
     // Make map load polygon data (state shapes and names) from GeoJSON
@@ -362,7 +364,7 @@ function createMapAreas(datajson){
 
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#3c5bdc");
+    hs.properties.fill = am4core.color("#d49977");
 
     chart.maxZoomLevel = 1;
     chart.seriesContainer.draggable = false;
