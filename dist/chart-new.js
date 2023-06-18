@@ -29,12 +29,15 @@ function createCharts(datajson){
       data: {
         labels: label1,
         datasets: [{
+          backgroundColor: '#D3B3A1',
           label: 'Number of Society',
           data: datas1,
-          borderWidth: 1
+          borderWidth: 1,
+          borderRadius: 15
         }]
       },
       options: {
+        indexAxis: 'y',
         plugins: {
             title: {
                 display: true,
@@ -60,9 +63,11 @@ function createCharts(datajson){
         data: {
           labels: label2,
           datasets: [{
+            backgroundColor: '#D3B3A1',
             label: 'Number of Sectors',
             data: datas2,
-            borderWidth: 1
+            borderWidth: 1,
+            borderRadius: 15
           }]
         },
         options: {
@@ -92,8 +97,11 @@ function createCharts(datajson){
           labels: label3,
           datasets: [{
             label: 'Number of Sectors',
+            backgroundColor: '#D3B3A1',
+            borderWidth: 2,
             data: datas3,
-            borderWidth: 1
+            borderWidth: 1,
+            tension: 0
           }]
         },
         options: {

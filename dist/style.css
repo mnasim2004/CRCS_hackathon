@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   padding-right: 20px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
 }
 
 img {
@@ -149,6 +149,7 @@ textarea {
   flex-direction: column;
   align-items: flex-start;
   color: grey;
+  height:700px ;
 }
 .navigation a {
   display: flex;
@@ -163,6 +164,9 @@ textarea {
   margin-right:auto;
   margin-left: auto;
   margin-top:20px;
+}
+.navigation a:nth-child(4){
+  margin-bottom: 20px;
 }
 .navigation a * {
   transition: 0.50s ease;
