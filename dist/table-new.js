@@ -49,6 +49,7 @@ function createTable(datajson){
                 data:datajson,
                 layout: 'fitColumns',
                 resizableColumnFit:true,
+                tooltipsHeader: false,
                 pagination:true,
                 paginationSize:10,
                 paginationSizeSelector:[5, 10, 20],

@@ -16,7 +16,8 @@
 
   .flat-button {
     border-radius: 100px;
-    background-color: #DEF2F1;
+    background-color: white;
+    
     padding: 0.5em 1.5em;
     border: 0;
     color:  #303843;
@@ -32,6 +33,7 @@
   .flat-button:hover, .flat-button:focus {
     background-color:  #2B7A78;
     color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     
   }
 
@@ -48,8 +50,8 @@
   .search-field input {
     width: 220%;
     color: grey;
+    border:white;
     border-radius: 25px;
-    border: none !important;
     text-align: centre;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -58,8 +60,8 @@
   }
   .search-field input.active, .search-field input:focus {
     width: 220%;
+    color: black;
     border-radius: 25px;
-    border: 2px solid  #2B7A78 !important;
     text-align: centre;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
@@ -109,7 +111,7 @@
 /*Color the table rows*/
 #example-table .tabulator-tableHolder .tabulator-table .tabulator-row{
     color:#fff;
-    background-color: #2B7A78;
+    background-color:#DEF2F1;
 }
 
 /*Color even rows*/

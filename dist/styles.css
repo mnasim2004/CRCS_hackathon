@@ -49,7 +49,7 @@ footer{
 }
 
 .tabs a.active, .tabs a:hover, .tabs a:focus {
-    transform: translateY(4px);
+  transform: translateY(4px);
   color: #17252A;
   border-radius: 25px;
   background: white;
@@ -58,4 +58,29 @@ footer{
   padding : 2px 8px 2px 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
+
+  .navigate_icon{
+    color:#297472;
+    position: absolute;
+    right: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 50px;
+    padding : 6px ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  .navigate_icon:hover , .navigate_icon:focus ,.navigate_icon:active{
+    color: white;
+    position: absolute;
+    right: 40px;
+    border-radius: 25px;
+    background: #297472 !important; 
+}
+  
+.app-body-navigation{
+  background-color: #297472 ;
+  border-radius: 25px;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
 

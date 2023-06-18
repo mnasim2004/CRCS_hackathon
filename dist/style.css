@@ -86,7 +86,7 @@ textarea {
 }
 .footer div {
   border-top: 1px solid var(--c-gray-600);
-  margin-top: 1.5rem;
+  margin-top: 4.5rem;
   padding-top: 1rem;
   font-size: 0.75rem;
   color: var(--c-text-tertiary);
@@ -157,8 +157,12 @@ textarea {
   transition: 0.25s ease;
   border-radius: 100px;
   border: 2px solid #2B7A78;
+  background-color: white;
   padding : 8px;
   width: 100px;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top:20px;
 }
 .navigation a * {
   transition: 0.50s ease;
@@ -175,7 +179,7 @@ textarea {
   transform: translateX(4px);
   color: white;
   border-radius: 25px;
-  background: #2B7A78;
+  background: #61A9A9 !important;
   border: none !important;
   padding : 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -345,7 +349,7 @@ textarea {
   font-weight: 200;
 }
 
-.service-section > h2 {
+  rvice-section > h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.25rem;
@@ -706,11 +710,6 @@ g[aria-labelledby="id-79-title"],g[aria-labelledby="id-163-title"] {
   cursor: pointer;
 } 
 
-
-.app-body-navigation{
-  height: auto;
-  border-right: groove 1px #2B7A78;
-}
 
 .navigation{
   height: -webkit-fill-available;
