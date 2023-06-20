@@ -9,7 +9,10 @@
 }
 #example-table{
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
+
   .service-section {
     max-width: 99%;
   }
@@ -135,4 +138,5 @@
   color: white;
 }
 
+@media(m)
 
