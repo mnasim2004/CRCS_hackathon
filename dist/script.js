@@ -224,6 +224,21 @@ function getYearState(datajson,state){
     return temp
 }
 
+function getdistrictwise(datajson, state){
+    var s = {}
+    df = getDataState(datajson, state)
+    console.log(df)
+    for (i in df){
+        if(s[df[i]["District"]]== null){
+            s[df[i]["District"]] = 1
+        }
+        else {
+            s[df[i]["District"]] = s[df[i]["District"]] + 1
+        }
+    }
+    return s
+}
+
 function getDataState(datajson, state){
     var newdatajson = []
     count = 0

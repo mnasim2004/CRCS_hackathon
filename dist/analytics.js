@@ -7,6 +7,11 @@ function createSubCharts(datajson, statename){
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
+
+    chartStatus = Chart.getChart("mysubChart3"); // <canvas> id
+    if (chartStatus != undefined) {
+      chartStatus.destroy();
+    }
   
     document.getElementById("statename").innerHTML = statename
   
@@ -17,7 +22,7 @@ function createSubCharts(datajson, statename){
     const ctx1 = document.getElementById('mysubChart1');
   
       new Chart(ctx1, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
           labels: xlabels,
           datasets: [{
@@ -74,6 +79,43 @@ function createSubCharts(datajson, statename){
   
         }
       });
+
+
+      districtdata = getdistrictwise(datajson, statename)
+      xlabels = Object.keys(districtdata)
+      ylabels = Object.values(districtdata)
+
+      const ctx3 = document.getElementById('mysubChart3');
+
+      new Chart(ctx3, {
+        type: 'bar',
+        data: {
+          labels: xlabels,
+          datasets: [{
+            label: 'Number of Society',
+            data: ylabels,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+              title: {
+                  display: true,
+                  text: "District-wise",
+                  font:{
+                      size:20
+                  }
+              }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+  
+        }
+      });
+
   }
 
   function createSubTable(datajson, statename){
@@ -122,7 +164,7 @@ function createChartsAll(datajson){
       }
       const ctx4 = document.getElementById('myChart4');
     new Chart(ctx4, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
           labels: label4,
           datasets: [{
