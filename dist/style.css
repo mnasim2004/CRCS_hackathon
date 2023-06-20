@@ -29,6 +29,7 @@ body {
 /*  background-color: var(--c-gray-900);*/
   display: flex;
   padding-right: 20px;
+  width: max-content;
   /* padding-left: 20px; */
 }
 
@@ -749,4 +750,17 @@ g[aria-labelledby="id-79-title"],g[aria-labelledby="id-163-title"] {
 
 .app {
   width: 100%;
+}
+
+
+
+@media (max-width: 1200px){
+  body {
+    width: max-content;
+  }
+}
+@media (min-width: 1201px){
+  body {
+    width: auto;
+  }
 }

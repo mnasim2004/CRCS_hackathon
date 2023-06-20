@@ -236,11 +236,34 @@ function getDataState(datajson, state){
     //console.log(newdatajson)
     return newdatajson
 }
+function scrollFunction() {
+    let mybutton = document.getElementById("myBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    var body = $("html, body");
+     body.stop().animate({scrollTop:0}, 200, 'swing', function() { 
+          console.log("Animation has finished");
+     });
+   }
+//   function topFunction() {
+//     document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+//   }
 
 
+window.onscroll = function() {scrollFunction()};
 var WHOLEDATA;
-
 $(document).ready(function() {
+    
+    
+// When the user scrolls down 20px from the top of the document, show the button
+   
   //console.log("asdasdad")
   $.ajax({
       type: "GET",
@@ -250,6 +273,7 @@ $(document).ready(function() {
           //console.log(data)
           var datajson = $.csv.toObjects(data)
           //console.log(datajson)
+          
           WHOLEDATA = datajson
           createTable(datajson)
           createMapStatewise(datajson)
