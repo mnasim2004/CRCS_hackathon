@@ -281,7 +281,7 @@ $(document).ready(function() {
   //console.log("asdasdad")
   $.ajax({
       type: "GET",
-      url: "data.csv",
+      url: "/data/data.csv",
       dataType: "text",
       success: function(data) {
           //console.log(data)

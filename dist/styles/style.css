@@ -1,0 +1,344 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+:root {
+  --c-gray-900: #000000;
+  --c-gray-800: #1f1f1f;
+  --c-gray-700: #2e2e2e;
+  --c-gray-600: #313131;
+  --c-gray-500: #969593;
+  --c-gray-400: #a6a6a6;
+  --c-gray-300: #bdbbb7;
+  --c-gray-200: #f1f1f1;
+  --c-gray-100: #ffffff;
+  --c-green-500: #45ffbc;
+  --c-olive-500: #e3ffa8;
+  --c-white: var(--c-gray-100);
+  --c-text-primary: var(--c-gray-100);
+  --c-text-secondary: var(--c-gray-200);
+  --c-text-tertiary: var(--c-gray-500);
+}
+
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  /*font-family: 'Crimson Text', serif;*/
+  font-family: 'Manrope', sans-serif;
+/*  background-color: var(--c-gray-900);*/
+  display: flex;
+  padding-right: 20px;
+  width: max-content;
+  /* padding-left: 20px; */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+
+
+
+.logo-title img{
+  width: 110px;
+  height: 110px;
+}
+
+
+
+.app-body {
+  display: grid;
+  grid-template-columns: minmax(-webkit-min-content, 175px) minmax(-webkit-max-content, 1fr) minmax(-webkit-min-content, 400px);
+  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr);
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  padding-top: 2.5rem;
+}
+
+
+.app-body-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.footer {
+  margin-top: auto;
+}
+.footer h1 {
+  font-size: 1.5rem;
+  line-height: 1.125;
+  display: flex;
+  align-items: flex-start;
+}
+.footer h1 small {
+  font-size: 0.5em;
+  margin-left: 0.25em;
+}
+.footer div {
+  border-top: 1px solid var(--c-gray-600);
+  margin-top: 4.5rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--c-text-tertiary);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--c-gray-600);
+}
+
+
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.logo-title {
+  width: 100%;
+  text-align: center;
+}
+
+.logo-title div{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-title {
+  display: flex;
+  line-height: 1.25;
+}
+.logo-title-disc{
+  font-size: 100%;
+}
+.logo-title a{
+  width: 100%;
+  text-decoration: none;
+  font-size: 250%;
+  font-weight: bold;
+  color: white;
+}
+.logo-title span:first-child {
+  color: var(--c-text-primary);
+}
+.logo-title span:last-child {
+  color: var(--c-text-tertiary);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: grey;
+  height:700px ;
+}
+.navigation a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+  border-radius: 100px;
+  border: 2px solid #2B7A78;
+  background-color: white;
+  padding : 8px;
+  width: 100px;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 1.25rem;
+}
+.navigation a:nth-child(4){
+  margin-bottom: 20px;
+}
+.navigation a * {
+  transition: 0.50s ease;
+}
+.navigation a i {
+  margin-right: 10px;
+  font-size: 1.25em;
+  flex-shrink: 0;
+}
+.navigation a + a {
+  margin-top: 1.25rem;
+}
+.navigation a:hover, .navigation a:focus, .current {
+  transform: translateX(4px);
+  color: white;
+  border-radius: 25px;
+  background: #61A9A9 !important;
+  border: none !important;
+  padding : 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  color: var(--c-text-tertiary);
+}
+
+.chartdivs {
+  width: 100%;
+  height: 800px;
+}
+
+g[aria-labelledby="id-79-title"],g[aria-labelledby="id-163-title"] {
+  visibility: hidden;
+}
+
+
+
+/*sidebar*/
+
+.innerclick {
+  cursor: pointer;
+} 
+
+
+.navigation{
+  height: -webkit-fill-available;
+}
+
+
+.footer{
+  text-align: center;
+}
+.footer a{
+  margin: 0px 10px 0px 10px;
+  font-style: normal;
+  color :black;
+  text-decoration: none;
+}
+.footer a:hover{
+  color :grey;
+
+}
+
+.app {
+  width: 100%;
+}
+
+
+
+@media (max-width: 1200px){
+  body {
+    width: max-content;
+  }
+}
+@media (min-width: 1201px){
+  body {
+    width: auto;
+  }
+}
+
+
+header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:#297472;
+  color: #fff;
+  z-index: 1000;
+  height: 175px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+} 
+main {
+  margin-top: 160px; 
+}
+
+._3lion{
+  margin : 10px 20px 10px 40px;
+}
+
+.mscs_logo{
+  margin : 10px 20px 10px 40px;
+}
+
+.tabs a {
+  justify-content: space-around;
+  padding-top:5px;
+  padding-bottom: 5px;
+  width: 100px;
+  text-align: center ;
+  margin:auto;
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  display: inline-flex;
+  transition: 0.25s ease;
+  color:white;
+  border-radius: 100px;
+  padding : 4px 3px 3px 8px;
+}
+.tabs a:nth-child(1){
+  margin-left: 50px;
+}
+.tabs a:nth-child(9){
+  margin-right: 50px;
+}
+footer{
+  position: relative;
+}
+
+.tabs a.active, .tabs a:hover, .tabs a:focus {
+transform: translateY(4px);
+color: #17252A;
+border-radius: 25px;
+background: white;
+border: none !important;
+text-align: centre;
+padding : 2px 8px 2px 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.navigate_icon{
+  display: none ;
+  color:#297472;
+  border-radius: 50px;
+  border-color: transparent;
+  padding : 15px ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  color:#d49977;
+  position: fixed;
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  cursor: pointer; 
+}
+.navigate_icon:hover , .navigate_icon:focus ,.navigate_icon:active{
+  color: white;
+  background: #297472 ; 
+}
+
+.app-body-navigation{
+background-color: #297472 ;
+border-radius: 0px 25px 25px 0px;
+height: auto;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+width: 180px;
+}
+
+h2{
+font-size: 30px;
+font-weight: bold;
+}

@@ -241,6 +241,8 @@ function createMapStatewise(datajson){
         //console.log(ev.target.dataItem.dataContext.name);
         createAnalytics(datajson, ev.target.dataItem.dataContext.name)
         document.getElementById("analytic").click()
+        //console.log(document.getElementById("gotostate"))
+        document.getElementById("gotostate").click()
         //document.getElementById("section-analytic").focus()
     });
 
